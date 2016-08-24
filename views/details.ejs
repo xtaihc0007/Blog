@@ -1,0 +1,21 @@
+
+<% include header%>
+<div id="bottompart">
+
+    <div class="row">
+
+        <div class="ctn">
+            <h3><a href='/u/<%=post.user%>'><%= post.user %></a> Says：</h3>
+            <p><%= post.time %><br/><%= post.post %></p>
+        </div>
+
+
+    </div>
+    <%post.comments.forEach(function (comment, index) {%>
+    <h3><%=comment.commentuser%> Says：</h3>
+    <p><%= comment.commenttext %></p>
+    <%})%>
+</div>
+</div>
+
+<% include footer%>

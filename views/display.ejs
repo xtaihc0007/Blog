@@ -1,0 +1,17 @@
+<div id="bottompart">
+    <% posts.forEach(function(post, index){//遍历posts内容，每行显示三个
+    if(index % 3 == 0){ %>
+    <div class="row">
+        <% } %>
+        <div class="ctn">
+            <h3><a href='/u/<%=post.user%>'><%= post.user %></a> Says：</h3>
+            <p><%= post.time %><br/><a href="/c/<%=post._id%>"><%= post.post %></a></p>
+        </div>
+        <% if(index % 3 == 2){ %>
+    </div>
+    <% } %>
+    <% }); %>
+    <% if(posts.length % 3 != 0){ %>
+</div>
+<% } %>
+</div>

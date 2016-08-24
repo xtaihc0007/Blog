@@ -1,0 +1,14 @@
+<%- include header.ejs %>
+<% if(!user){ %><!--未登录时显示登陆信息-->
+<div id="toppart">
+  <h2>Welcome to my simple blog</h2>
+
+  <p>This site is developed by using node.js+express+mongoDB。</p>
+  <br/>
+  <a href="/login" class="btn">Login</a>
+  <a href="/reg" class="btn">Register</a>
+</div>
+<% }else{ %>
+<%- include display.ejs %>
+<% } %>
+<%- include footer.ejs %>
